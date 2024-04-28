@@ -1,0 +1,25 @@
+User stories:
+
+US1. As a user, I want to be able to create a new account so that I can access the task tracking platform.
+
+US2. As a user, I want to log in to my account securely using my credentials.
+
+US3. As a user, I want to view my profile and update my personal information.
+
+US4. As a user, I want to create a new task with a title, description, and due date.
+
+US5. As a user, I want to view a list of all tasks assigned to me.
+
+US6. As a user, I want to mark a task as completed when I finish working on it.
+
+US7. As a user, I want to assign a task to another team member.
+
+US8. As a user, I want to filter tasks based on their status (e.g., open, completed).
+
+US9. As a user, I want to search for tasks by title or description.
+
+US10. As a user, I want to collaborate with team members by adding comments and attachments to tasks.
+
+US11. As a user, I want to create a new team or project and invite team members to join.
+
+US12. As a user, I want to securely log out of my account when I'm done using the platform.
