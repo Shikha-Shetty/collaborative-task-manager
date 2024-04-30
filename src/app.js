@@ -8,6 +8,7 @@ app.use(express.json());
 const port = 3000;
 
 app.post('/register', signup);
+app.post('/login', login);
 
 app.listen(port, (err) => {
     if (err) {
