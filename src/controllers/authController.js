@@ -3,7 +3,6 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 var signup = (req, res) => {
-// Create a new user and save it to the database
 User.create({
     username: req.body.username,
     email: req.body.email,
@@ -55,5 +54,17 @@ var login = (req, res) => {
     });
 }
 
+const logout = (req, res) => {
+    try {
+        // Assuming the token is stored in the client's localStorage
+        // Currently no frontend application to test it
+        // localStorage.removeItem('accessToken');
+        res.status(200).json({ message: 'User logged out successfully' });
+    } catch (error) {
+        console.error('Error logging out user:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
 
-module.exports = {signup, login};
+
+module.exports = {signup, login, logout};
