@@ -5,5 +5,5 @@ Developed a backend system for a task tracking and management application that f
 [User Stories](./User_stories.txt)
 
 2. ER Diagram
-[ER Diagram](./TaskMaster.png)
-<img src="./TaskMaster.png" width="730">
+[ER Diagram](./Taskmaster_Application_ER_Diagram.png)
+<img src="./Taskmaster_Application_ER_Diagram.png" width="730">
