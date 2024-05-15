@@ -36,7 +36,7 @@ var login = (req, res) => {
             });
         } else {
             var token = jwt.sign({
-                id: user.userID
+                id: user.userId
             }, process.env.API_SECRET, {
                 expiresIn: 86400
             });
@@ -45,7 +45,7 @@ var login = (req, res) => {
                 message: "Login Successful",
                 accessToken: token,
                 user: {
-                    id: user.userID
+                    id: user.userId
                 }
             });
         }

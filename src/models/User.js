@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require("../configs/sequelize.config"); // Assuming you have a database connection configured
 
-const User = sequelize.define('User', {
-    userID: {
+const User = sequelize.define('user', {
+    userId: {
       type: DataTypes.BIGINT,
       primaryKey: true,
       autoIncrement: true
@@ -31,6 +31,10 @@ const User = sequelize.define('User', {
       type: DataTypes.STRING,
       allowNull: true
     }
-  });
+  }, {
+    tableName: 'user',
+    timestamps: false
+  }
+);
   
   module.exports = User;
