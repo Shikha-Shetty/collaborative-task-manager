@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "0e70c4f4-e9e3-4e79-a6dc-bb8e5cc3ac08",
+		"name": "Collaborative Task Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6720526"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Edwina\",\r\n    \"email\": \"Edwima123@gmail.com\",\r\n    \"password\": \"KathaniSharma\",\r\n    \"firstName\": \"Edwina\",\r\n    \"lastName\": \"Sharma\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"Edwima123@gmail.com\",\r\n    \"password\": \"KathaniSharma\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE1Nzg4NDQ5LCJleHAiOjE3MTU4NzQ4NDl9.RQTsxqvJCw2GVfRlpqfA6DEFUzPCvn7SGqma_eeWcgs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzE1NzcwMjE5LCJleHAiOjE3MTU4NTY2MTl9.zc9xmAcTltgR54jtgOMXu5ZKfjejgRCK-MeJt9hq39o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Bella\",\r\n    \"password\": \"Bella123\",\r\n    \"email\": \"Bella@gmail.com\",\r\n    \"firstName\": \"Bella\",\r\n    \"lastName\": \"Hadid\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzE1NzcwMjE5LCJleHAiOjE3MTU4NTY2MTl9.zc9xmAcTltgR54jtgOMXu5ZKfjejgRCK-MeJt9hq39o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logout"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE1Nzg4NDQ5LCJleHAiOjE3MTU4NzQ4NDl9.RQTsxqvJCw2GVfRlpqfA6DEFUzPCvn7SGqma_eeWcgs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"UX walkthrough to Engineering team\",\r\n    \"description\": \"Discussion with engineering team on the feasibility\",\r\n    \"dueDate\": \"2024-05-15\",\r\n    \"assignedTo\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Completed Task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE1Nzg4NDQ5LCJleHAiOjE3MTU4NzQ4NDl9.RQTsxqvJCw2GVfRlpqfA6DEFUzPCvn7SGqma_eeWcgs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/tasks/11",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"11"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Task assigned",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE1Nzg4NDQ5LCJleHAiOjE3MTU4NzQ4NDl9.RQTsxqvJCw2GVfRlpqfA6DEFUzPCvn7SGqma_eeWcgs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by Title and description",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE1Nzg4NDQ5LCJleHAiOjE3MTU4NzQ4NDl9.RQTsxqvJCw2GVfRlpqfA6DEFUzPCvn7SGqma_eeWcgs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/tasks/search?keyword=ui",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "ui"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Tasks on status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE1Nzg4NDQ5LCJleHAiOjE3MTU4NzQ4NDl9.RQTsxqvJCw2GVfRlpqfA6DEFUzPCvn7SGqma_eeWcgs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/tasks/status?status=completed",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "completed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign task to user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTcxNTc5MzI4MSwiZXhwIjoxNzE1ODc5NjgxfQ.6tyc3xMQVdx4HaGSSKvF1yqWLzExWkMkG10AHA7R_vQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"assignedTo\" : 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks/8/assign",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"8",
+						"assign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Team",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTcxNTc5MzI4MSwiZXhwIjoxNzE1ODc5NjgxfQ.6tyc3xMQVdx4HaGSSKvF1yqWLzExWkMkG10AHA7R_vQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"teamName\": \"South Star\",\r\n    \"teamDescription\": \"A collaborative project for designing a new project\",\r\n    \"memberIds\": [4, 5, 6, 10]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/teams",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add comment and attachment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTcxNTc5MzI4MSwiZXhwIjoxNzE1ODc5NjgxfQ.6tyc3xMQVdx4HaGSSKvF1yqWLzExWkMkG10AHA7R_vQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentText\": \"This is a comment for the task\",\r\n    \"filename\": \"example.docx\",\r\n    \"filetype\": \"application/msword\",\r\n    \"fileUrl\": \"https://example.com/files/example.docx\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks/1/collaborate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"1",
+						"collaborate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
