@@ -7,3 +7,7 @@ Developed a backend system for a task tracking and management application that f
 2. ER Diagram
 [ER Diagram](./Taskmaster_Application_ER_Diagram.png)
 <img src="./Taskmaster_Application_ER_Diagram.png" width="730">
+
+3. Postman Collection
+
+<iframe src="https://documenter.getpostman.com/view/6720526/2sA3JRYe1E" width="100%" height="600px"></iframe>
