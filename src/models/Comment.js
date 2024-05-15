@@ -32,9 +32,7 @@ const Comment = sequelize.define('comment', {
     timestamps: false
   });
   
-  Comment.belongsTo(Task, { foreignKey: 'taskId' });
-  Comment.belongsTo(User, { foreignKey: 'userId' });
-  
+ 
   module.exports = Comment;
   
   

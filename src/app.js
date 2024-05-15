@@ -1,7 +1,7 @@
 const express = require('express');
 const { signup, login, logout } = require('./controllers/authController');
 const { getProfile, updateProfile } = require('./controllers/profileController');
-const { createTask, viewTask, updateTask, filterTaskByStatus, searchTask, assignTask } = require('./controllers/taskController');
+const { createTask, viewTask, updateTask, filterTaskByStatus, searchTask, assignTask, collaborateWithTeam } = require('./controllers/taskController');
 const { createTeam }= require('./controllers/teamController');
 const verifyToken = require('./middleware/authJwt');
 
@@ -45,8 +45,11 @@ app.get('/tasks/search', verifyToken, searchTask);
 // Route to assign any task to another user
 app.put('/tasks/:taskId/assign', verifyToken, assignTask);
 
-//Route to create and add members to the team
+// Route to create and add members to the team
 app.post('/teams', verifyToken, createTeam);
+
+// Route to add comments and attachments to a task
+app.post('/tasks/:taskId/collaborate', verifyToken, collaborateWithTeam);
 
 app.listen(port, (err) => {
     if (err) {

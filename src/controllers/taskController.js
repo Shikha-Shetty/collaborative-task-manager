@@ -1,4 +1,7 @@
 const Task = require('../models/Task');
+const Comment = require('../models/Comment');
+const Attachment = require('../models/Attachment');
+
 const { Op } = require('sequelize');
 
 const createTask = async (req, res) => {
@@ -104,5 +107,31 @@ const assignTask = async (req, res) => {
     }
 };
 
+const collaborateWithTeam = async (req, res) => {
+    const taskId = req.params.taskId;
+    const userId = req.userId;
+    const { commentText, filename, filetype, fileUrl } = req.body;
 
-module.exports = { createTask, viewTask, updateTask, filterTaskByStatus, searchTask, assignTask };
+    try {
+        const newComment = await Comment.create({
+            taskId: taskId,
+            userId: userId,
+            comment: commentText
+        });
+        await newComment.save();
+        const newAttachment = await Attachment.create({
+            taskId: taskId,
+            userId: userId,
+            filename: filename,
+            filetype: filetype,
+            fileUrl: fileUrl
+        });
+        await newAttachment.save();
+        res.status(200).json({ message: 'Collaboration successful', newComment, newAttachment });
+    } catch (error) {
+        console.error('Error collaborating with team:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+module.exports = { createTask, viewTask, updateTask, filterTaskByStatus, searchTask, assignTask, collaborateWithTeam };

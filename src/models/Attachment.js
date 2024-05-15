@@ -40,8 +40,5 @@ const sequelize = require("../configs/sequelize.config"); // Database connection
     timestamps: false // Added for Sequelize to avoid managing createdAt and updatedAt fields
   });
   
-  // Defined associations as an extra check
-  Attachment.belongsTo(Task, { foreignKey: 'taskId' });
-  Attachment.belongsTo(User, { foreignKey: 'userId' });
-  
+ 
   module.exports = Attachment;
