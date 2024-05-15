@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
-var signup = (req, res) => {
+const signup = (req, res) => {
 User.create({
     username: req.body.username,
     email: req.body.email,
@@ -19,12 +19,11 @@ User.create({
 
 }
 
-
-var login = (req, res) => {
+const login = (req, res) => {
     var emailPassed = req.body.email;
     let passwordPassed = req.body.password;
     User.findOne({
-        where: { email: emailPassed } // Specify the condition here
+        where: { email: emailPassed }
     }).then(user => {
         if (!user) {
             return res.status(404).send({ message: "User not found" });
@@ -67,4 +66,4 @@ const logout = (req, res) => {
 };
 
 
-module.exports = {signup, login, logout};
+module.exports = { signup, login, logout };

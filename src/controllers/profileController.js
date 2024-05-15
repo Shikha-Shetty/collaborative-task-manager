@@ -1,7 +1,7 @@
 const User = require('../models/User');
 const { validateUserProfile } = require('../validation/validator');
 
-var getProfile = (req, res) => {
+const getProfile = (req, res) => {
     const userId = req.userId;
     User.findByPk(userId)
         .then(user => {
