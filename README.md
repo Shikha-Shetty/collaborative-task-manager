@@ -9,5 +9,4 @@ Developed a backend system for a task tracking and management application that f
 <img src="./Taskmaster_Application_ER_Diagram.png" width="730">
 
 3. Postman Collection
-
-<iframe src="https://documenter.getpostman.com/view/6720526/2sA3JRYe1E" width="100%" height="600px"></iframe>
+[View Postman Collection Documentation](https://documenter.getpostman.com/view/6720526/2sA3JRYe1E)
