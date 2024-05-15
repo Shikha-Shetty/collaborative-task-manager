@@ -1,7 +1,7 @@
 {
     "development": {
-      "username": "shikha",
-      "password": "mysqlshikha",
+      "username": "your_username",
+      "password": "your_password",
       "database": "taskmaster",
       "host": "localhost",
       "dialect": "mysql"
