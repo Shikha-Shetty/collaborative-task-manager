@@ -1,7 +1,7 @@
 const express = require('express');
 const { signup, login, logout } = require('./controllers/authController');
 const { getProfile, updateProfile } = require('./controllers/profileController');
-const { createTask, viewTask, updateTask, filterTaskByStatus, searchTask } = require('./controllers/taskController');
+const { createTask, viewTask, updateTask, filterTaskByStatus, searchTask, assignTask } = require('./controllers/taskController');
 const verifyToken = require('./middleware/authJwt');
 
 require('dotenv').config();
@@ -40,6 +40,9 @@ app.get('/tasks/status', verifyToken, filterTaskByStatus);
 
 // Route to search tasks of the logged-in user by title or description
 app.get('/tasks/search', verifyToken, searchTask);
+
+// Route to assign any task to another user
+app.put('/tasks/:taskId/assign', verifyToken, assignTask);
 
 app.listen(port, (err) => {
     if (err) {
