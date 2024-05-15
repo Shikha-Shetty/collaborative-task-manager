@@ -10,3 +10,4 @@ Developed a backend system for a task tracking and management application that f
 
 3. Postman Collection
 [View Postman Collection Documentation](https://documenter.getpostman.com/view/6720526/2sA3JRYe1E)
+[JSON file to import into Postman](Collaborative_Task_Manager.postman_collection.json)
